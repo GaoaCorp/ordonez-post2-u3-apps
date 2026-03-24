@@ -77,27 +77,30 @@ val appModule = module {
 ## Checkpoints de verificación
 
 ### ✅ Checkpoint 1 — Capa domain sin imports Android
+
 El paquete `domain/` es Kotlin puro. Verificado con búsqueda `Ctrl+Shift+F` → `import android` dentro de la carpeta `domain` → **0 coincidencias**.
 
-> 📸 *Ver: `screenshots/checkpoint1-domain-sin-android.png`*
+![Checkpoint 1 - Domain sin imports Android](screenshots/checkpoint1-domain-sin-android.png)
 
 ---
 
 ### ✅ Checkpoint 2 — App ejecuta y filtra tareas pendientes
+
 La aplicación compila y ejecuta correctamente con Koin. La lista muestra únicamente las **4 tareas pendientes** de 5 totales, excluyendo correctamente la tarea con `completed = true` ("Leer documentación de Koin DSL").
 
-> 📸 *Ver: `screenshots/checkpoint2-app-tareas-filtradas.png`*
+![Checkpoint 2 - App con tareas filtradas](screenshots/checkpoint2-app-tareas-filtradas.png)
 
 ---
 
 ### ✅ Checkpoint 3 — Tests unitarios del Use Case pasan
+
 Los dos tests unitarios de `GetPendingTasksUseCaseTest` verifican:
 - `retorna solo tareas pendientes` — filtra correctamente las completadas
 - `retorna lista en orden descendente por ID` — ordena de mayor a menor ID
 
 Ejecutados con `./gradlew test` → **BUILD SUCCESSFUL**, ambos tests **PASSED**.
 
-> 📸 *Ver: `screenshots/checkpoint3-tests-passed.png`*
+![Checkpoint 3 - Tests passed](screenshots/checkpoint3-tests-passed.png)
 
 ---
 
